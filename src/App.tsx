@@ -1,15 +1,18 @@
-import "./App.css";
-import React from "react";
-import Counter from "./components/counter";
-import { hot } from "react-hot-loader";
+import "./css/App.css";
+import React, { useState } from "react";
+import { Nav } from "./components/nav";
 
-function App() {
+export const App: React.FC<{}> = () => {
+  const [isLogin, isLoginSetstate] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
+      <Nav isLogin={isLogin} />
+      <div className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <img src="./logo512.png" className="App-logo" />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,11 +20,8 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-          <Counter name="song" />
         </a>
-      </header>
+      </div>
     </div>
   );
-}
-
-export default hot(module)(App);
+};

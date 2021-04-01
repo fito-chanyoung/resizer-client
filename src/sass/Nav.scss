@@ -1,0 +1,92 @@
+@import "./mixin";
+
+@include mobile {
+  #navigator {
+    display: flex;
+    height: 20vh;
+    width: 100vw;
+    background-color: white;
+  }
+
+  .desktop {
+    display: none;
+    visibility: hidden;
+    width: 0vw !important;
+  }
+}
+
+@include tablet {
+  #navigator {
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    background-color: white;
+  }
+  .mobile {
+    display: none;
+    visibility: hidden;
+    width: 0vw !important;
+  }
+}
+
+@include desktop {
+  #navigator {
+    align-content: center;
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    background-color: white;
+  }
+
+  .mobile {
+    display: none;
+    visibility: hidden;
+    width: 0vw !important;
+  }
+}
+
+.logo {
+  width: 50%;
+  float: left;
+}
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+.right {
+  float: right;
+}
+.order1 {
+  order: 1;
+}
+.order0 {
+  order: 0;
+}
+
+.width20 {
+  width: 20%;
+}
+
+.align-center {
+  align-self: center;
+}
+
+.modal {
+  display: grid;
+  width: 40%;
+  border: 1px solid black;
+  justify-content: center !important;
+  align-content: center !important;
+}
+
+.height100 {
+  height: 100%;
+}
+
+.desktop {
+  display: grid;
+  justify-content: center !important;
+  align-content: center !important;
+}
