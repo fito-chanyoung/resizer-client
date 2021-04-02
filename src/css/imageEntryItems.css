@@ -1,0 +1,23 @@
+@media (min-width: 335px) and (max-width: 757px) {
+  .card-container {
+    background-color: #e0dfdc; }
+
+  .card {
+    max-height: 10%;
+    max-width: 10%; } }
+@media (min-width: 758px) and (max-width: 1023px) {
+  .card-container {
+    background-color: #e0dfdc; }
+
+  .card {
+    max-height: 10%;
+    max-width: 10%; } }
+@media (min-width: 1024px) {
+  .card-container {
+    background-color: #e0dfdc; }
+
+  .card {
+    max-height: 10%;
+    max-width: 10%; } }
+
+/*# sourceMappingURL=imageEntryItems.css.map */
