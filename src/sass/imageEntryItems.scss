@@ -1,0 +1,32 @@
+// card-container
+@import "./mixin";
+
+@include mobile {
+  .card-container {
+    background-color: rgb(224, 223, 220);
+  }
+  .card {
+    max-height: 10%;
+    max-width: 10%;
+  }
+}
+
+@include tablet {
+  .card-container {
+    background-color: rgb(224, 223, 220);
+  }
+  .card {
+    max-height: 10%;
+    max-width: 10%;
+  }
+}
+
+@include desktop {
+  .card-container {
+    background-color: rgb(224, 223, 220);
+  }
+  .card {
+    max-height: 10%;
+    max-width: 10%;
+  }
+}
