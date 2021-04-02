@@ -1,0 +1,9 @@
+@import "./mixin";
+.button-addimage {
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  width: 150px;
+  height: 50px;
+  background-color: rgb(50, 80, 190);
+}

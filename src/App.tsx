@@ -1,27 +1,22 @@
 import "./css/App.css";
-import React, { useState } from "react";
+import React from "react";
 import { Nav } from "./components/nav";
+import { ImageUploader } from "./components/imageUploader";
 
 export const App: React.FC<{}> = () => {
-  const [isLogin, isLoginSetstate] = useState(false);
+  const [isLogin, isLoginSetstate] = React.useState<boolean>(false);
+  const [isPixel, isPixelSetState] = React.useState<boolean>(false);
+  const [option, optionSetStates] = React.useState<object>({});
 
   return (
     <div className="App">
       <Nav isLogin={isLogin} />
-      <div className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <img src="./logo512.png" className="App-logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </div>
+      <ImageUploader
+        isPixel={isPixel}
+        option={option}
+        optionHandler={optionSetStates}
+        methodToggler={isPixelSetState}
+      />
     </div>
   );
 };
