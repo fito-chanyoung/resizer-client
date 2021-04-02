@@ -1,0 +1,32 @@
+@media (min-width: 335px) and (max-width: 757px) {
+  .upload-container {
+    background-color: #e0dfdc;
+    height: 80vh; }
+
+  .uploader-desc {
+    padding-top: 2vh;
+    max-width: 70vw;
+    display: inline-flex;
+    padding-bottom: 5vh; } }
+@media (min-width: 758px) and (max-width: 1023px) {
+  .upload-container {
+    background-color: #e0dfdc;
+    height: 90vh; }
+
+  .uploader-desc {
+    padding-top: 2vh;
+    max-width: 70vw;
+    display: inline-flex;
+    padding-bottom: 5vh; } }
+@media (min-width: 1024px) {
+  .upload-container {
+    background-color: #e0dfdc;
+    height: 90vh; }
+
+  .uploader-desc {
+    padding-top: 2vh;
+    max-width: 70vw;
+    display: inline-flex;
+    padding-bottom: 5vh; } }
+
+/*# sourceMappingURL=imageUploader.css.map */
