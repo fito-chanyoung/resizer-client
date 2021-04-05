@@ -1,4 +1,4 @@
-@media (min-width: 335px) and (max-width: 757px) {
+@media (min-width: 0) and (max-width: 757px) {
   #navigator {
     display: flex;
     height: 20vh;
