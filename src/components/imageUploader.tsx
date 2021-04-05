@@ -3,6 +3,7 @@ import "../css/imageUploader.css";
 import { ImageAdder } from "./addImages";
 import { ImageEntryList } from "./imageEntry";
 import { ImageProps } from "./imageEntryItems";
+import { AddImageBtn } from "./addImgBtn";
 
 export interface ImageUploaderProps {
   option: object;
@@ -26,14 +27,17 @@ export const ImageUploader: React.FC<ImageUploaderProps> = (args) => {
     reader.addEventListener(
       "load",
       function () {
+        let img = new Image();
+        img.src = this.result as string;
+        console.log(file);
         let image: ImageProps = {
-          height: 100,
           title: file.name,
           sizes: file.size,
           src: this.result as string,
         };
 
-        imageSetstates([...images, image]);
+        images.push(image);
+        imageSetstates([...images]);
       },
       false
     );
@@ -42,24 +46,22 @@ export const ImageUploader: React.FC<ImageUploaderProps> = (args) => {
   }
 
   function imageAddFunc(e: React.DragEvent<HTMLDivElement>) {
-    let fileReader = new FileReader();
-
-    fileReader.addEventListener("load", function () {});
-
     e.preventDefault();
-    let files: { [key: string]: any };
-    files = e.dataTransfer.files;
-    for (const n in files) {
-      console.log(files[n]);
-      if (typeof files[n] === "object" && validateFile(files[n])) {
-        readAndAppend(files[n]);
+
+    if (e.dataTransfer)
+      for (const n of e.dataTransfer.files) {
+        if (validateFile(n)) readAndAppend(n);
       }
-    }
   }
   const validateFile = (file: File) => {
     //const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/x-icon'];
     const validTypes: Array<string> = ["image/png"];
     if (validTypes.indexOf(file.type) === -1) {
+      return false;
+    } else if (
+      images.length !== 0 &&
+      images.filter((index) => index.title === file.name).length > 0
+    ) {
       return false;
     }
     return true;
@@ -81,11 +83,21 @@ export const ImageUploader: React.FC<ImageUploaderProps> = (args) => {
             현재는 png 파일만 수정가능하며 추후 범위를 확대할 예정입니다. <br />{" "}
             아래 버튼 혹은 이미지를 드래그 & 드롭하세요{" "}
           </div>
+          <AddImageBtn
+            images={images}
+            readAndAppend={readAndAppend}
+            validateFile={validateFile}
+          />
           <ImageAdder image={images} imageSetstates={imageSetstates} />
         </div>
       ) : (
         <div>
           <ImageEntryList images={images} />
+          <AddImageBtn
+            images={images}
+            readAndAppend={readAndAppend}
+            validateFile={validateFile}
+          />
           <ImageAdder image={images} imageSetstates={imageSetstates} />
         </div>
       )}

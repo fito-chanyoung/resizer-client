@@ -9,7 +9,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch": "tsc --watch",
-    "storybook": "tsc --watch & sass --watch src/sass:src/css & start-storybook -p 6006 -s public & npm start",
+    "storybook": "tsc --watch & sass --watch src/sass:src/css & start-storybook -p 6006 -s ./public & npm start",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {

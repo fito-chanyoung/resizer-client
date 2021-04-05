@@ -8,6 +8,7 @@ const react_1 = __importDefault(require("react"));
 require("../css/imageUploader.css");
 const addImages_1 = require("./addImages");
 const imageEntry_1 = require("./imageEntry");
+const addImgBtn_1 = require("./addImgBtn");
 const ImageUploader = (args) => {
     const [images, imageSetstates] = react_1.default.useState([]);
     function defaultPreventer(e) {
@@ -17,33 +18,35 @@ const ImageUploader = (args) => {
         // Make sure `file.name` matches our extensions criteria
         let reader = new FileReader();
         reader.addEventListener("load", function () {
+            let img = new Image();
+            img.src = this.result;
+            console.log(file);
             let image = {
-                height: 100,
                 title: file.name,
                 sizes: file.size,
                 src: this.result,
             };
-            imageSetstates([...images, image]);
+            images.push(image);
+            imageSetstates([...images]);
         }, false);
         reader.readAsDataURL(file);
     }
     function imageAddFunc(e) {
-        let fileReader = new FileReader();
-        fileReader.addEventListener("load", function () { });
         e.preventDefault();
-        let files;
-        files = e.dataTransfer.files;
-        for (const n in files) {
-            console.log(files[n]);
-            if (typeof files[n] === "object" && validateFile(files[n])) {
-                readAndAppend(files[n]);
+        if (e.dataTransfer)
+            for (const n of e.dataTransfer.files) {
+                if (validateFile(n))
+                    readAndAppend(n);
             }
-        }
     }
     const validateFile = (file) => {
         //const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/x-icon'];
         const validTypes = ["image/png"];
         if (validTypes.indexOf(file.type) === -1) {
+            return false;
+        }
+        else if (images.length !== 0 &&
+            images.filter((index) => index.title === file.name).length > 0) {
             return false;
         }
         return true;
@@ -57,8 +60,10 @@ const ImageUploader = (args) => {
             " ",
             "\uC544\uB798 \uBC84\uD2BC \uD639\uC740 \uC774\uBBF8\uC9C0\uB97C \uB4DC\uB798\uADF8 & \uB4DC\uB86D\uD558\uC138\uC694",
             " "),
+        react_1.default.createElement(addImgBtn_1.AddImageBtn, { images: images, readAndAppend: readAndAppend, validateFile: validateFile }),
         react_1.default.createElement(addImages_1.ImageAdder, { image: images, imageSetstates: imageSetstates }))) : (react_1.default.createElement("div", null,
         react_1.default.createElement(imageEntry_1.ImageEntryList, { images: images }),
+        react_1.default.createElement(addImgBtn_1.AddImageBtn, { images: images, readAndAppend: readAndAppend, validateFile: validateFile }),
         react_1.default.createElement(addImages_1.ImageAdder, { image: images, imageSetstates: imageSetstates })))));
 };
 exports.ImageUploader = ImageUploader;

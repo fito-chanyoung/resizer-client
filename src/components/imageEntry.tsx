@@ -1,6 +1,6 @@
 import React from "react";
 import { ImageEntryItems, ImageProps } from "./imageEntryItems";
-
+import "../css/listEntry.css";
 export interface ListProps {
   images: Array<ImageProps>;
 }
