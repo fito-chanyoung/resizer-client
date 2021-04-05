@@ -23,7 +23,7 @@ export const ImageEntryItems: React.FC<EntryProps> = ({ image }) => {
   return (
     <div className="card-container">
       <img src={image.src} className="card" />
-      <div>
+      <div role="img" title={image.title}>
         {image.title.length > 20
           ? image.title.slice(0, 20) + "..."
           : image.title}
