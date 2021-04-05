@@ -17,7 +17,7 @@ const ImageEntryItems = ({ image }) => {
     // console.log(image);
     return (react_1.default.createElement("div", { className: "card-container" },
         react_1.default.createElement("img", { src: image.src, className: "card" }),
-        react_1.default.createElement("div", null, image.title.length > 20
+        react_1.default.createElement("div", { role: "img", title: image.title }, image.title.length > 20
             ? image.title.slice(0, 20) + "..."
             : image.title)));
 };
