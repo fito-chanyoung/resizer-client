@@ -1,0 +1,18 @@
+@media (min-width: 0) and (max-width: 758px) {
+  .option-toggler {
+    width: 60px !important;
+    height: 60px !important;
+    position: absolute;
+    display: block;
+    left: -80px;
+    top: 20px; } }
+@media (min-width: 758px) and (max-width: 1024px) {
+  .option-toggler {
+    display: none; } }
+@media (min-width: 1024px) {
+  .option-toggler {
+    display: none; } }
+.img-container {
+  max-width: 100%; }
+
+/*# sourceMappingURL=optionToggler.css.map */

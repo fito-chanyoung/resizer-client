@@ -27,14 +27,18 @@ export const ImageEntryItems: React.FC<EntryProps> = ({ image }) => {
   }
   return (
     <div className="card-container-inner">
-      <img src={image.src} className="card" onLoad={onImgLoad} />
-      <div>
-        {image.title.length > 20
-          ? image.title.slice(0, 20) + "..."
-          : image.title}
+      <div className="card-img-container">
+        <img src={image.src} className="card" onLoad={onImgLoad} />
       </div>
-      <div>
-        {dimensions.height} X {dimensions.width}
+      <div className="card-desc">
+        <div className="card-title">
+          {image.title.length > 20
+            ? image.title.slice(0, 20) + "..."
+            : image.title}
+        </div>
+        <div className="card-size">
+          {dimensions.height} X {dimensions.width}
+        </div>
       </div>
     </div>
   );

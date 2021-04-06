@@ -1,5 +1,18 @@
-.card-container {
-  display: inline-flex;
+@media (min-width: 0) and (max-width: 758px) {
+  .card-container {
+    justify-content: center; } }
+@media (min-width: 758px) and (max-width: 1024px) {
+  .card-container {
+    display: inline-flex;
+    justify-content: center; } }
+@media (min-width: 1024px) {
+  .card-container {
+    display: inline-flex;
+    justify-content: center; } }
+.card-container-wrapper {
+  display: inline-grid;
+  max-width: 70%;
+  align-items: center !important;
   justify-content: center; }
 
 /*# sourceMappingURL=listEntry.css.map */
