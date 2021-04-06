@@ -1,0 +1,32 @@
+@media (min-width: 0) and (max-width: 758px) {
+  .option {
+    text-align: left;
+    transition: 0.2s;
+    width: 0px;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+    right: 0px; } }
+@media (min-width: 758px) and (max-width: 1024px) {
+  .option {
+    text-align: left;
+    transition: 0s;
+    width: 300px;
+    height: 90vh;
+    position: fixed;
+    background-color: white;
+    right: 0; } }
+@media (min-width: 1024px) {
+  .option {
+    padding-left: 10px;
+    text-align: left;
+    transition: 0s;
+    width: 300px;
+    height: 90vh;
+    position: fixed;
+    background-color: white;
+    right: 0; } }
+.option-input {
+  width: 50px; }
+
+/*# sourceMappingURL=option.css.map */

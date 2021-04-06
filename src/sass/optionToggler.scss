@@ -1,0 +1,27 @@
+@import "./mixin";
+
+@include mobile {
+  .option-toggler {
+    width: 60px !important;
+    height: 60px !important;
+    position: absolute;
+    display: block;
+    left: -80px;
+    top: 20px;
+  }
+}
+
+@include tablet {
+  .option-toggler {
+    display: none;
+  }
+}
+
+@include desktop {
+  .option-toggler {
+    display: none;
+  }
+}
+.img-container {
+  max-width: 100%;
+}

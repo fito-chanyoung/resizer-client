@@ -1,14 +1,70 @@
-.indicator {
-  background-color: rgb(100, 100, 250);
-  border-radius: 50%;
-  width: 50%;
-  height: 50%;
-  text-align: center;
-  color: white;
-  position: absolute;
-  z-index: 2;
-  font-size: small;
+@import "./mixin";
+
+@include mobile {
+  .addimgbtn-container {
+    width: 60px !important;
+    height: 60px !important;
+    position: absolute;
+    left: -80px;
+    top: 100px;
+  }
+  .indicator {
+    background-color: rgb(100, 100, 250);
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    font-size: small;
+    display: grid;
+    align-items: center;
+    font-size: larger;
+  }
 }
+
+@include tablet {
+  .addimgbtn-container {
+    width: 30px !important;
+    height: 30px !important;
+    position: absolute;
+    left: -40px;
+    top: 100px;
+  }
+  .indicator {
+    background-color: rgb(100, 100, 250);
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    font-size: small;
+  }
+}
+@include desktop {
+  .addimgbtn-container {
+    width: 30px !important;
+    height: 30px !important;
+    position: absolute;
+    left: -40px;
+    top: 100px;
+  }
+  .indicator {
+    background-color: rgb(100, 100, 250);
+    border-radius: 50%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    color: white;
+    position: absolute;
+    z-index: 2;
+    font-size: small;
+  }
+}
+
 .addbtn {
   position: absolute;
   width: 1px;
@@ -23,14 +79,6 @@
 
 .img-container:hover {
   background-color: aqua;
-}
-
-.addimgbtn-container {
-  width: 30px !important;
-  height: 30px !important;
-  position: absolute;
-  right: 10px;
-  top: 100px;
 }
 
 .home-addbtn-container {
@@ -54,7 +102,7 @@
   height: 1px;
   padding: 0;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip-path: rect(0, 0, 0, 0);
   white-space: nowrap; /* 1 */
   clip-path: inset(50%);
   border: 0;
@@ -70,4 +118,23 @@
   top: 2px;
   left: 2px;
   transition: 0.2s;
+}
+
+.btn-before-add {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 10vh;
+  background-color: white;
+  width: 50%;
+  margin-top: 2vh;
+  min-width: 200px;
+
+  box-shadow: 2px 2px 0.6;
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
 }

@@ -3,13 +3,17 @@
 @include mobile {
   .upload-container {
     background-color: rgb(224, 223, 220);
-    height: 80vh;
+    height: 100%;
   }
   .uploader-desc {
     padding-top: 2vh;
     max-width: 70vw;
-    display: inline-flex;
     padding-bottom: 5vh;
+  }
+  .img-viewer {
+    display: flex;
+    justify-content: center;
+    position: relative;
   }
 }
 
@@ -21,8 +25,15 @@
   .uploader-desc {
     padding-top: 2vh;
     max-width: 70vw;
-    display: inline-flex;
     padding-bottom: 5vh;
+  }
+  .img-viewer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .view-70 {
+    width: 70%;
   }
 }
 
@@ -34,7 +45,18 @@
   .uploader-desc {
     padding-top: 2vh;
     max-width: 70vw;
-    display: inline-flex;
     padding-bottom: 5vh;
   }
+  .img-viewer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .view-70 {
+    width: 70%;
+  }
+}
+.blind {
+  display: none;
+  top: 0;
 }

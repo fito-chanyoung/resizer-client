@@ -19,14 +19,19 @@ export const AddImageBtn: React.FC<modalProps> = ({
   validateFile,
 }) => {
   let submitHnadler: any = function (e: HTMLInputEvent) {
-    if (e.target.files)
+    if (e.target.files) {
+      let count: number = e.target.files.length;
       for (const n of e.target.files) {
-        if (validateFile(n)) readAndAppend(n);
+        if (validateFile(n)) readAndAppend(n, count);
+        else count--;
       }
+    }
   };
   return images.length > 0 ? (
     <div className="addimgbtn-container">
-      <div className="indicator">{images.length}</div>
+      <div className="indicator">
+        <span>{images.length}</span>
+      </div>
       <form>
         <label>
           <input
@@ -40,9 +45,9 @@ export const AddImageBtn: React.FC<modalProps> = ({
       </form>
     </div>
   ) : (
-    <div>
+    <div className="flex justify-center">
       <form>
-        <label>
+        <label className="btn-before-add">
           <input
             type="file"
             multiple

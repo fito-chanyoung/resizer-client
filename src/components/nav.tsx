@@ -9,24 +9,24 @@ export interface navProps {
 export const Nav: React.FC<navProps> = ({ isLogin }) => {
   return (
     <Router>
-      <div id="navigator">
+      <div id="navigator" className="box-shadow">
         <Link to="/" className="logo align-center">
           logo
         </Link>
-        <div className="menu right align-center height100">
+        <div className="menu right align-center height100 ">
           {isLogin ? (
             <Link to="/logout" className="right order0 width20 desktop">
               <div>로그아웃</div>
             </Link>
           ) : (
-            <Link to="/login" className="right order0 width20 desktop">
+            <Link to="/login" className="right order0 width20 desktop ">
               <div>로그인</div>
             </Link>
           )}
-          <Link to="/signup" className="right order1 width20 desktop">
+          <Link to="/signup" className="right order1 width20 desktop ">
             <div>가입하기</div>
           </Link>
-          <div className="modal mobile">
+          <div className="modal mobile box-shadow">
             <div>모달창</div>
           </div>
         </div>

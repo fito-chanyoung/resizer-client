@@ -5,10 +5,22 @@ export interface ListProps {
   images: Array<ImageProps>;
 }
 export const ImageEntryList: React.FC<ListProps> = ({ images }) => {
+  let newImgArr = [];
+
+  for (let i = 0; i < images.length; i = i + 5) {
+    newImgArr.push(images.slice(i, i + 5));
+  }
+  let counter: number = -1;
   return (
-    <div className="card-container">
-      {images.map((image, i) => (
-        <ImageEntryItems image={image} key={i} />
+    <div className="card-container-wrapper">
+      {newImgArr.map((array, i) => (
+        <div className="card-container" key={i}>
+          {array.map((image, j) => {
+            counter++;
+            console.log(counter);
+            return <ImageEntryItems image={image} key={i + j} />;
+          })}
+        </div>
       ))}
     </div>
   );

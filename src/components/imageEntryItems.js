@@ -39,14 +39,16 @@ const ImageEntryItems = ({ image }) => {
         });
     }
     return (react_1.default.createElement("div", { className: "card-container-inner" },
-        react_1.default.createElement("img", { src: image.src, className: "card", onLoad: onImgLoad }),
-        react_1.default.createElement("div", null, image.title.length > 20
-            ? image.title.slice(0, 20) + "..."
-            : image.title),
-        react_1.default.createElement("div", null,
-            dimensions.height,
-            " X ",
-            dimensions.width)));
+        react_1.default.createElement("div", { className: "card-img-container" },
+            react_1.default.createElement("img", { src: image.src, className: "card", onLoad: onImgLoad })),
+        react_1.default.createElement("div", { className: "card-desc" },
+            react_1.default.createElement("div", { className: "card-title" }, image.title.length > 20
+                ? image.title.slice(0, 20) + "..."
+                : image.title),
+            react_1.default.createElement("div", { className: "card-size" },
+                dimensions.height,
+                " X ",
+                dimensions.width))));
 };
 exports.ImageEntryItems = ImageEntryItems;
 //# sourceMappingURL=imageEntryItems.js.map
