@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/imageUploader.css";
-import { ImageAdder } from "./addImages";
+import { ImageUploaderBtn } from "./addImages";
 import { ImageEntryList } from "./imageEntry";
 import { ImageProps } from "./imageEntryItems";
 import { AddImageBtn } from "./addImgBtn";
@@ -8,19 +8,21 @@ import { Options, option } from "./options";
 
 export interface ImageUploaderProps {
   option: option;
+  images: Array<ImageProps>;
   isPixel: boolean;
+  imageSetstates: Function;
   optionHandler: Function;
-  methodToggler: Function;
+  uploadToggler: Function;
 }
 
 export const ImageUploader: React.FC<ImageUploaderProps> = ({
   option,
   isPixel,
+  images,
+  imageSetstates,
   optionHandler,
-  methodToggler,
+  uploadToggler,
 }) => {
-  const [images, imageSetstates] = React.useState<Array<ImageProps>>([]);
-
   let tmpArr: Array<ImageProps> = [];
   function defaultPreventer(e: React.DragEvent<HTMLDivElement>) {
     e.preventDefault();
@@ -46,7 +48,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
 
   function readAndAppend(file: File, targetNumber: number) {
     // Make sure `file.name` matches our extensions criteria
-    console.log(file);
+
     let reader = new FileReader();
 
     reader.addEventListener(
@@ -112,6 +114,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
   const validateFile = (file: File) => {
     //const validTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/x-icon'];
     const validTypes: Array<string> = ["image/png"];
+
     if (validTypes.indexOf(file.type) === -1) {
       return false;
     } else if (
@@ -145,12 +148,20 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
               validateFile={validateFile}
             />
           </div>
-          <ImageAdder image={images} imageSetstates={imageSetstates} />
+          <ImageUploaderBtn
+            image={images}
+            imageSetstates={imageSetstates}
+            uploadToggler={uploadToggler}
+          />
         </div>
       ) : (
         <div className="img-viewer view-70">
           <ImageEntryList images={images} />
-          <ImageAdder image={images} imageSetstates={imageSetstates} />
+          <ImageUploaderBtn
+            image={images}
+            imageSetstates={imageSetstates}
+            uploadToggler={uploadToggler}
+          />
 
           <Options
             option={option}
