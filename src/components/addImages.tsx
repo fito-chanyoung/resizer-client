@@ -1,18 +1,20 @@
 import React from "react";
 import "../css/addimages.css";
-
+import { Link } from "react-router-dom";
 export interface ImageAdderProps {
   image: Array<object>;
   imageSetstates: any;
+  uploadToggler: Function;
 }
 
-export const ImageAdder: React.FC<ImageAdderProps> = (args) => {
-  const handler = () => {
-    args.imageSetstates([...args.image, { test: 1 }]);
-  };
+export const ImageUploaderBtn: React.FC<ImageAdderProps> = ({
+  image,
+  uploadToggler,
+}) => {
+  const handler = () => (image.length >= 1 ? uploadToggler(true) : "");
   return (
-    <div className="button-addimage" onClick={handler}>
+    <Link to="/upload" className="button-addimage" onClick={handler}>
       Add Images
-    </div>
+    </Link>
   );
 };

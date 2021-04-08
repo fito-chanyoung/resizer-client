@@ -10,8 +10,7 @@ const addImages_1 = require("./addImages");
 const imageEntry_1 = require("./imageEntry");
 const addImgBtn_1 = require("./addImgBtn");
 const options_1 = require("./options");
-const ImageUploader = ({ option, isPixel, optionHandler, methodToggler, }) => {
-    const [images, imageSetstates] = react_1.default.useState([]);
+const ImageUploader = ({ option, isPixel, images, imageSetstates, optionHandler, uploadToggler, }) => {
     let tmpArr = [];
     function defaultPreventer(e) {
         e.preventDefault();
@@ -34,7 +33,6 @@ const ImageUploader = ({ option, isPixel, optionHandler, methodToggler, }) => {
     }
     function readAndAppend(file, targetNumber) {
         // Make sure `file.name` matches our extensions criteria
-        console.log(file);
         let reader = new FileReader();
         reader.addEventListener("load", function () {
             let img = new Image();
@@ -100,9 +98,9 @@ const ImageUploader = ({ option, isPixel, optionHandler, methodToggler, }) => {
                 react_1.default.createElement("br", null),
                 "\uC544\uB798 \uBC84\uD2BC \uD639\uC740 \uC774\uBBF8\uC9C0\uB97C \uB4DC\uB798\uADF8 & \uB4DC\uB86D\uD558\uC138\uC694",
                 react_1.default.createElement(addImgBtn_1.AddImageBtn, { images: images, readAndAppend: readAndAppend, validateFile: validateFile })),
-            react_1.default.createElement(addImages_1.ImageAdder, { image: images, imageSetstates: imageSetstates }))) : (react_1.default.createElement("div", { className: "img-viewer view-70" },
+            react_1.default.createElement(addImages_1.ImageUploaderBtn, { image: images, imageSetstates: imageSetstates, uploadToggler: uploadToggler }))) : (react_1.default.createElement("div", { className: "img-viewer view-70" },
             react_1.default.createElement(imageEntry_1.ImageEntryList, { images: images }),
-            react_1.default.createElement(addImages_1.ImageAdder, { image: images, imageSetstates: imageSetstates }),
+            react_1.default.createElement(addImages_1.ImageUploaderBtn, { image: images, imageSetstates: imageSetstates, uploadToggler: uploadToggler }),
             react_1.default.createElement(options_1.Options, { option: option, isPixel: isPixel, images: images, optionHandler: optionHandler, readAndAppend: readAndAppend, validateFile: validateFile })))));
 };
 exports.ImageUploader = ImageUploader;

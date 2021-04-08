@@ -1,0 +1,31 @@
+@import "./mixin";
+
+.fixed-container {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  align-items: center;
+  justify-content: center;
+}
+.waiting-anime {
+  max-width: 300px;
+  max-height: 300px;
+
+  min-width: 100px;
+  min-height: 100px;
+  background-color: black;
+
+  transition: 1s;
+  animation: rotation 1s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

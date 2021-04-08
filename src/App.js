@@ -7,22 +7,32 @@ exports.App = void 0;
 require("./css/App.css");
 const react_1 = __importDefault(require("react"));
 const nav_1 = require("./components/nav");
-const imageUploader_1 = require("./components/imageUploader");
 const App = () => {
-    const [isLogin, isLoginSetstate] = react_1.default.useState(false);
-    const [isPixel, isPixelSetState] = react_1.default.useState(true);
-    const [option, optionSetStates] = react_1.default.useState({
-        width: 0,
-        height: 0,
-        aspectRatio: true,
-        doNotEnglare: true,
-        percentage: 75,
-        manualPercentage: false,
-        multiple: false,
-    });
+    // let test: React.MouseEventHandler<HTMLDivElement> = function (
+    //   e: React.MouseEvent<HTMLDivElement, MouseEvent>
+    // ) {
+    //   e.preventDefault();
+    //   let target: string[] = ["2020.jpg", "egg.png"];
+    //   target.forEach((index) => {
+    //     fetch(
+    //       `https://testuploadcli.s3.ap-northeast-2.amazonaws.com/images/${index}`
+    //     )
+    //       .then((response) => response.blob())
+    //       .then((blob) => {
+    //         const url = window.URL.createObjectURL(new Blob([blob]));
+    //         const link = document.createElement("a");
+    //         link.href = url;
+    //         console.log(blob);
+    //         link.setAttribute("download", `${index}`);
+    //         // Append to html link element page
+    //         // Start download
+    //         link.click();
+    //         // Clean up and remove the link
+    //       });
+    //   });
+    //};
     return (react_1.default.createElement("div", { className: "App" },
-        react_1.default.createElement(nav_1.Nav, { isLogin: isLogin }),
-        react_1.default.createElement(imageUploader_1.ImageUploader, { isPixel: isPixel, option: option, optionHandler: optionSetStates, methodToggler: isPixelSetState })));
+        react_1.default.createElement(nav_1.Nav, null)));
 };
 exports.App = App;
 //# sourceMappingURL=App.js.map
