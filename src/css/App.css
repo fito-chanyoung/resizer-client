@@ -1,6 +1,8 @@
 @media (min-width: 0) and (max-width: 758px) {
   .App {
-    text-align: center; }
+    text-align: center;
+    min-height: 100vh;
+    background-color: #e0dfdc; }
 
   .App-logo {
     height: 40vmin;
@@ -29,7 +31,9 @@
       transform: rotate(360deg); } } }
 @media (min-width: 758px) and (max-width: 1024px) {
   .App {
-    text-align: center; }
+    text-align: center;
+    min-height: 100vh;
+    background-color: #e0dfdc; }
 
   .App-logo {
     height: 40vmin;
@@ -58,7 +62,9 @@
       transform: rotate(360deg); } } }
 @media (min-width: 1024px) {
   .App {
-    text-align: center; }
+    text-align: center;
+    min-height: 100vh;
+    background-color: #e0dfdc; }
 
   .App-logo {
     height: 40vmin;
