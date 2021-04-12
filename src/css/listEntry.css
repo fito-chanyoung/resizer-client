@@ -3,14 +3,14 @@
     justify-content: center; } }
 @media (min-width: 758px) and (max-width: 1024px) {
   .card-container {
-    display: inline-flex;
+    display: inline-block;
     justify-content: center; } }
 @media (min-width: 1024px) {
   .card-container {
-    display: inline-flex;
+    display: inline-block;
     justify-content: center; } }
 .card-container-wrapper {
-  display: inline-grid;
+  display: block;
   max-width: 70%;
   align-items: center !important;
   justify-content: center; }

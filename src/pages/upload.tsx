@@ -25,8 +25,8 @@ export const Uploader: React.FC<uploaderProps> = ({
   //     });
   // });
   return (
-    <div className="fixed-container">
-      <div className="waiting-anime"></div>
+    <div>
+      <div className="loader"></div>
     </div>
   );
 };

@@ -16,8 +16,8 @@ const Uploader = ({ images, transformedImagesSetstates, isUploadEndSetstate, }) 
     //       transformedImagesSetstates(array);
     //     });
     // });
-    return (react_1.default.createElement("div", { className: "fixed-container" },
-        react_1.default.createElement("div", { className: "waiting-anime" })));
+    return (react_1.default.createElement("div", null,
+        react_1.default.createElement("div", { className: "loader" })));
 };
 exports.Uploader = Uploader;
 //# sourceMappingURL=upload.js.map

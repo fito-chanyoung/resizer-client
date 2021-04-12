@@ -2,7 +2,8 @@
 
 @include mobile {
   .upload-container {
-    background-color: rgb(224, 223, 220);
+    background-color: rgba(224, 223, 220, 0);
+    padding-top: 20vh;
     height: 100%;
   }
   .uploader-desc {
@@ -19,7 +20,7 @@
 
 @include tablet {
   .upload-container {
-    background-color: rgb(224, 223, 220);
+    background-color: rgba(224, 223, 220, 0);
     height: 90vh;
   }
   .uploader-desc {
@@ -39,7 +40,7 @@
 
 @include desktop {
   .upload-container {
-    background-color: rgb(224, 223, 220);
+    background-color: rgba(224, 223, 220, 0);
     height: 90vh;
   }
   .uploader-desc {
